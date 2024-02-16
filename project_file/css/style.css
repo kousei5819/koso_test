@@ -1,0 +1,1152 @@
+@charset "UTF-8";
+
+/* ーーーーーーー
+共通部分
+ーーーーーーー */
+
+* {
+    list-style: none;
+    text-decoration: none;
+    /* color: #8B7659; */
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #FFF5EE;
+    overflow-x: hidden;
+}
+
+/* ーーーーーーーー
+headerについて
+ーーーーーーーー */
+
+@media(min-width:901px) {
+    header {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .logo img {
+        width: 250px;
+        padding-left: 3rem;
+    }
+
+    .main-nav {
+        display: flex;
+        list-style: none;
+        padding-right: 50px;
+    }
+
+    li {
+        padding: 0 20px;
+
+    }
+
+    header a {
+        color: #8B7659;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+
+    .btn-booking {
+        color: #fff;
+        background-color: #8B7659
+    }
+
+    .btn-booking:hover {
+        color: #fff;
+        background: #8B7659;
+    }
+
+    .btn-booking {
+        font-size: 1.3rem;
+        position: relative;
+        padding: 1.3rem 2.5rem 1.3rem 2.5rem;
+        border-radius: 10px;
+    }
+
+    #overlay-input {
+        display: none;
+    }
+}
+
+/* ーーーーーーーーーーーーーー
+ハンバーガーメニュー
+ーーーーーーーーーーーーーー */
+
+@media (max-width:900px) {
+    header {
+        width: 100%;
+        height: 100px;
+
+    }
+
+    body {
+        background: #FFF5EE;
+        margin: 0;
+        font-family: arial;
+        width: 100vw;
+        height: 100vh;
+        animation: bugfix infinite 1s;
+        -webkit-animation: bugfix infinite 1s;
+    }
+
+    @keyframes bugfix {
+        from {
+            padding: 0;
+        }
+
+        to {
+            padding: 0;
+        }
+    }
+
+    @-webkit-keyframes bugfix {
+        from {
+            padding: 0;
+        }
+
+        to {
+            padding: 0;
+        }
+    }
+
+    #overlay-button {
+        position: absolute;
+        right: 2em;
+        top: 1.4em;
+        padding: 28px 11px;
+        z-index: 5;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    #overlay-button span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: #8b7659;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+    }
+
+    #overlay-button span:before {
+        top: -10px;
+        visibility: visible;
+    }
+
+    #overlay-button span:after {
+        top: 10px;
+    }
+
+    #overlay-button span:before,
+    #overlay-button span:after {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: #8b7659;
+        position: absolute;
+        content: "";
+        transition: all .2s ease-in-out;
+    }
+
+    #overlay-button:hover span,
+    #overlay-button:hover span:before,
+    #overlay-button:hover span:after {
+        background: #8b7659;
+    }
+
+    input[type=checkbox] {
+        display: none;
+
+    }
+
+    input[type=checkbox]:checked~#overlay {
+        visibility: visible;
+    }
+
+    input[type=checkbox]:checked~#overlay-button:hover span,
+    input[type=checkbox]:checked~#overlay-button span {
+        background: transparent;
+
+
+    }
+
+    input[type=checkbox]:checked~#overlay-button span:before {
+        transform: rotate(45deg) translate(7px, 7px);
+
+    }
+
+    input[type=checkbox]:checked~#overlay-button span:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+
+
+    }
+
+    #overlay {
+        height: 100vh;
+        width: 100vw;
+        background: #FFF5EE;
+        z-index: 2;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+    }
+
+    #overlay ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+        padding-left: 0;
+        list-style-type: none;
+    }
+
+    #overlay ul li {
+        padding: 1em;
+    }
+
+    #overlay ul li a {
+        color: #8b7659;
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+
+    #overlay ul li a:hover {
+        color: #56452d !important;
+    }
+
+    .logo {
+        padding-top: 25px;
+    }
+
+    .logo img {
+        width: 220px;
+        padding-left: 3rem;
+    }
+
+}
+
+
+
+/* ーーーーーーーー
+main-vについて
+ーーーーーーーー */
+
+.mv img {
+    width: 100%;
+    height: auto;
+}
+
+/* ーーーーーーーー
+見出し文について
+ーーーーーーーー */
+.lead {
+    margin-top: 5rem;
+}
+
+.item-a {
+    margin: 3rem;
+    width: 80%;
+    margin: auto;
+}
+
+.item-b {
+    padding-top: 3rem;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.type1 {
+    margin-right: .15rem;
+}
+
+.type2 {
+    margin-right: .15rem;
+}
+
+.type3 {
+    margin-right: .15rem;
+}
+
+.type4 {
+    margin-right: .15rem;
+}
+
+.lead img {
+    width: 100%;
+    height: auto;
+}
+
+.text-a>h1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.5rem;
+    color: #291900;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    font-feature-settings: "palt" 1;
+}
+
+.text-a p {
+    width: 100%;
+    font-size: .9rem;
+    color: #8B7659;
+    line-height: 1.8em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.text-a a {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.text-b>h1 {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 1.5rem;
+    color: #291900;
+    margin-bottom: 2rem;
+    white-space: nowrap;
+    font-feature-settings: "palt" 1;
+}
+
+.text-b p {
+    width: 100%;
+    font-size: .9rem;
+    color: #8B7659;
+    line-height: 1.8em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.text-b a {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.button-001 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    margin: 0 auto;
+    padding: .5em .7em;
+    border: 3px solid #AD7A7A;
+    border-radius: 8px;
+    background-color: #F1DFD3;
+    color: #AD7A7A;
+    font-size: 1em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.button-001::after {
+    transform: rotate(45deg);
+    width: 5px;
+    height: 5px;
+    margin-left: 10px;
+    border-top: 2px solid #AD7A7A;
+    border-right: 2px solid #AD7A7A;
+    content: '';
+}
+
+/* @media screen and (min-width:726px) and (max-width:1024px) {
+    .item-a {
+        display: flex;
+    }
+
+    .item-b {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .lead img {
+        width: 400px;
+        height: auto;
+    }
+} */
+
+@media screen and (min-width:1000px) {
+    .item-a {
+        display: flex;
+        /* margin: 5rem; */
+    }
+
+    .item-b {
+        display: flex;
+        flex-direction: row-reverse;
+        /* margin: 5rem; */
+        margin-top: 1.5rem;
+    }
+
+    .lead img {
+        width: 500px;
+        height: auto;
+    }
+
+    .text-a {
+        padding-left: 3rem;
+    }
+
+    .text-a p {
+        width: 90%;
+    }
+
+    .text-b {
+        padding-right: 3rem;
+    }
+
+    .text-b p {
+        width: 90%;
+    }
+
+    .text-a h1 {
+        font-size: 2rem;
+    }
+
+    .text-b h1 {
+        font-size: 2rem;
+    }
+
+}
+
+/* ーーーーーーーーーー
+営業日について
+ーーーーーーーーーー */
+
+.fee {
+    padding: 4.5em 3em;
+    margin-top: 8em;
+    background: #EAD4C4;
+    color: #FFF5EE;
+}
+
+.box {
+    justify-content: space-around;
+}
+
+.box-a h2 {
+    text-align: center;
+    padding-top: 10px;
+    color: #523e21;
+    font-size: 1.7rem;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.box-a p {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.2rem;
+    color: #523e21;
+    line-height: 2.5em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+.box-b h2 {
+    text-align: center;
+    padding-top: 30px;
+    color: #523e21;
+    font-size: 1.7rem;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.box-b p {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 1.2rem;
+    color: #523e21;
+    line-height: 2.5em;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.booking {
+    padding-top: 5em;
+    margin-bottom: 1em;
+    background: #EAD4C4;
+    text-align: center;
+    color: #523e21;
+}
+
+.booking>h2 {
+    font-size: 30px;
+    font-family: 'Zen Maru Gothic', sans-serif;
+}
+
+.booking p {
+    font-size: 14px;
+    padding-top: 15px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.button-002 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto;
+    padding: 1em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #523e21;
+    color: #FFF5EE;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+
+@media(min-width:900px) {
+
+    .box {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: center; */
+    }
+
+    .box-b h2 {
+        padding-top: 10px;
+    }
+}
+
+/* ーーーーーーーーーー
+インスタについて
+ーーーーーーーーーー */
+.sns {
+    text-align: center;
+    margin-top: 10em;
+}
+
+.insta>h2 {
+    margin-top: 3rem;
+    padding-bottom: 1.5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #523e21;
+}
+
+.hr1 {
+    height: 2.5px;
+    width: 25%;
+    background-color: #8B7659;
+    border: none;
+    margin: auto;
+
+}
+
+.insta>hr {
+    margin-bottom: 50px;
+}
+
+.blog>hr {
+    margin-bottom: 50px;
+}
+
+.blog>h2 {
+    margin-top: 7rem;
+    padding-bottom: 1.5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #523e21;
+}
+
+.button-003 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    margin: 0 auto;
+    padding: .6em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #523e21;
+    color: #FFF5EE;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* ーーーーーーーーーーー
+インスタ02
+ーーーーーーーーーーー */
+
+
+
+.insta_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 75%;
+    margin: auto;
+}
+
+.insta_list li {
+    position: relative;
+    list-style-type: none;
+    width: calc((100% - 40px)/3);
+}
+
+@media screen and (max-width: 750px) {
+    .insta_list li {
+        width: calc((100% - 20px)/2);
+    }
+}
+
+.insta_list li::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.insta_list a {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+
+.insta_list img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.insta_btn {
+    background-color: #000;
+    padding: .5em 1em;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .3s
+}
+
+.insta_btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.insta_btn:hover {
+    background-color: #999;
+}
+
+/* ーーーーーーーーーーーー
+お問い合わせについて
+ーーーーーーーーーーーー */
+
+.contact {
+    height: 200px;
+    background-color: #EAD4C4;
+}
+
+.contact p {
+    text-align: center;
+    padding-top: 2rem;
+    font-family: 'Kosugi Maru', sans-serif;
+    color: #523e21;
+}
+
+.contact_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.con_01_bt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    margin: 0 auto;
+    padding: 1.3em 2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #523e21;
+    color: #FFF5EE;
+    font-weight: 600;
+    font-size: 1em;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+@media(max-width:700px) {
+    .contact {
+        height: 250px;
+    }
+
+    .contact_container {
+        flex-wrap: wrap;
+    }
+
+    .con_02 {
+        margin-top: 1.5rem;
+    }
+}
+
+/* ーーーーーーーーーー
+アクセスについて
+ーーーーーーーーーー */
+
+.access {
+    padding: 2rem 0 2.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 3rem 3rem 3rem;
+    justify-content: center;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.access-title>h2 {
+    text-align: center;
+    margin-top: 10rem;
+    padding-bottom: 1.5rem;
+    font-family: 'Kosugi Maru', sans-serif;
+    color: #523e21;
+}
+
+.table01 td {
+    padding: 0.5rem 3.7rem 0.5rem 3.7rem;
+    font-size: 1rem;
+    color: #523e21;
+    white-space: nowrap;
+    /* background-color: black; */
+}
+
+.table02 td {
+    padding: .5rem 3rem .5rem 3rem;
+    font-size: 1rem;
+    color: #523e21;
+    white-space: nowrap;
+    /* background-color: black; */
+}
+
+.access01 {
+    word-spacing: 10rem;
+}
+
+.access02 {
+    word-spacing: 10rem;
+}
+
+.test1 {
+    display: flex;
+    gap: 3em;
+
+}
+
+.test2 {
+    display: flex;
+    gap: 3.2em;
+    margin-top: 1.5em;
+
+}
+
+.test3 {
+    display: flex;
+    gap: 2.7em;
+    margin-top: 1.5em;
+}
+
+.test4 {
+    display: flex;
+    gap: 2.7em;
+    text-align-last: left;
+    white-space: nowrap;
+    margin-left: 5.5rem;
+}
+
+.test5 {
+    display: flex;
+    gap: 1.7em;
+    margin-top: 1.5em;
+    text-align-last: left;
+    white-space: nowrap;
+    margin-left: 5.5rem;
+    margin-bottom: 3rem;
+}
+
+.main001 {
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    margin-top: 3rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #523e21;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.map {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 7rem;
+}
+
+.map iframe {
+    width: 80%;
+    aspect-ratio: 16/9;
+
+}
+
+/* ーーーーーーーーーー
+footerについて
+ーーーーーーーーーー */
+
+footer {
+    background: #707070;
+    padding: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.footer1 {
+    display: none;
+}
+
+.footer2 {
+    display: none;
+}
+
+.copyright {
+    background-color: #707070;
+    color: #F1DFD3;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: .9rem;
+}
+
+@media (min-width:800px) {
+
+    .footer-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 3rem;
+        padding-left: 3rem;
+        font-size: .9rem;
+        flex-wrap: wrap;
+    }
+
+    .footer1 {
+        line-height: 2rem;
+        color: #F1DFD3;
+    }
+
+    .footer2 {
+        color: #FFF5EE;
+    }
+
+    .footer2-t {
+        display: flex;
+        list-style: none;
+    }
+
+    .footer2-t a {
+        color: #F1DFD3;
+    }
+}
+
+/* ーーーーーーーーーー
+aboutページ
+ーーーーーーーーーー */
+/* ーーーーーーーーーー
+米ぬかについて
+ーーーーーーーーーー */
+
+.about {
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+.about>h1 {
+    padding-top: 6.25rem;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #523e21;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.about>p {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    padding-top: 30px;
+    line-height: 2rem;
+    color: #8B7659;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+.about img {
+    width: 80%;
+    height: auto;
+}
+
+.text_koso {
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    padding-top: 30px;
+    margin-bottom: 10rem;
+}
+
+.text_koso h2 {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color: #523e21;
+    padding-top: 2rem;
+}
+
+
+
+.text_koso>p {
+    width: 80%;
+    text-align: left;
+    margin: 0 auto;
+    line-height: 2rem;
+    color: #8B7659;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+
+}
+
+/* ーーーーーーーーーー
+料金ページ
+ーーーーーーーーーー */
+/* ーーーーーーーーーー
+料金について
+ーーーーーーーーーー */
+.fee2 {
+    margin-bottom: 80px;
+}
+
+.fee2>h1 {
+    text-align: center;
+    margin-top: 6.25rem;
+    font-size: 1.8rem;
+    padding-bottom: 2rem;
+    color: #523e21;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.fee2 h2 {
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #523e21;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.text1 {
+    text-align: center;
+    padding-top: 1rem;
+
+}
+
+.text1 h3 {
+    color: #523e21;
+    font-size: 1.3rem;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.text1 p {
+    padding-top: 10px;
+    font-size: .9rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.monthly1 p {
+    text-align: center;
+    margin-top: 1.5rem;
+
+}
+
+.monthly2 p {
+    display: inline-block;
+    text-align: left;
+    font-size: .6rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.cancel {
+    margin: auto;
+    margin-top: 80px;
+    width: 80%;
+    border: solid 2px #707070;
+    /*線*/
+    /* border-radius: 30px; */
+    /*角の丸み*/
+}
+
+.cancel>h1 {
+    text-align: center;
+    padding-top: 40px;
+    font-size: 1.3rem;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.cancel>p {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    display: inline-block;
+    text-align: left;
+    font-size: .7rem;
+    line-height: 1.5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* ーーーーーーーーーー
+ご利用の流れについて
+ーーーーーーーーーー */
+
+
+.item-flow>h1 {
+    text-align: center;
+    padding-top: 6.25rem;
+    font-size: 1.5rem;
+    color: #523e21;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.textbox1 {
+    /* padding: 50px 100px 100px 100px; */
+    /* margin: 0px 30px 30px 30px; */
+    text-align: center;
+}
+
+.textbox1 img {
+    width: 80%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.text-1 {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.text-1 p {
+    width: 80%;
+    display: inline-block;
+    text-align: left;
+    margin-bottom: 2em;
+    font-size: .9rem;
+    padding-top: 2em;
+    color: #8B7659;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.text-1>h2 {
+    font-size: 1.5rem;
+    color: #523e21;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.text-title>h2 {
+    color: #8B7659;
+    width: 92%;
+    margin-left: auto;
+    margin-top: 5rem;
+    font-size: 3.5rem;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+@media(min-width:1000px) {
+    .item-flow>h1 {
+        text-align: center;
+        padding-top: 6.25rem;
+        font-size: 2rem;
+        color: #523e21;
+        font-family: 'Kosugi Maru', sans-serif;
+    }
+
+    .textbox1 {
+        display: flex;
+        flex-wrap: wrap;
+        /* justify-content: center; */
+        padding: 50px 100px 100px 100px;
+        margin: 0px 30px 30px 30px;
+    }
+
+    .textbox1 img {
+        width: 40%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .text-1 {
+        width: 60%;
+    }
+
+    .text-1 p {
+        width: 80%;
+        font-size: 1.2rem;
+        padding-top: 2em;
+        color: #8B7659;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+
+    .text-1>h2 {
+        font-size: 2rem;
+        color: #523e21;
+        font-family: 'Kosugi Maru', sans-serif;
+    }
+
+    .text-title>h2 {
+        color: #8B7659;
+        width: 92%;
+        margin-left: auto;
+        margin-top: 5rem;
+        font-size: 2.5rem;
+    }
+}
+
+
+/* ーーーーーーーーーー
+お客様の声について
+ーーーーーーーーーー */
+
+.customer>h1 {
+    text-align: center;
+    padding-top: 6.25rem;
+    font-size: 2rem;
+    color: #523e21;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.c-text1 h2 {
+    border-bottom: 1.5px solid;
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+    color: #523e21;
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+.c-text1 p {
+    margin: 0 auto;
+    width: 60%;
+    padding-top: 50px;
+    color: #8B7659;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.last-text {
+    padding-bottom: 2rem;
+}
+
+.customer>a {
+    margin-bottom: 3rem;
+}
